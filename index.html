@@ -1,136 +1,400 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-
-    <title>Minni Gupta CV</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minni Gupta | CV</title>
 
     <style>
 
-        body{
+        *{
             margin:0;
-            font-family:Arial;
-            background:#f4f4f4;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f6f9;
+            color:#333;
+            line-height:1.6;
         }
 
         .container{
-            width:80%;
-            margin:auto;
-            background:white;
-            padding:30px;
-            margin-top:30px;
-            border-radius:10px;
-            box-shadow:0px 0px 10px lightgray;
+            width:85%;
+            max-width:1000px;
+            margin:40px auto;
+            background:#fff;
+            padding:40px;
+            border-radius:12px;
+            box-shadow:0 0 15px rgba(0,0,0,0.1);
         }
 
         .header{
             text-align:center;
+            margin-bottom:30px;
         }
 
         .header img{
             width:150px;
             height:150px;
             border-radius:50%;
+            object-fit:cover;
+            border:4px solid #1f3c88;
         }
 
-        h1{
+        .header h1{
+            margin-top:15px;
+            font-size:38px;
             color:#1f3c88;
         }
 
-        h2{
+        .header p{
+            font-size:18px;
+            color:#555;
+            margin-top:8px;
+        }
+
+        .contact{
+            margin-top:10px;
+            font-size:16px;
+        }
+
+        .contact a{
             color:#1f3c88;
-            border-bottom:2px solid #1f3c88;
-            padding-bottom:5px;
-        }
-
-        ul{
-            line-height:30px;
-        }
-
-        a{
-            color:blue;
             text-decoration:none;
         }
 
-    </style>
+        h2{
+            margin-top:35px;
+            margin-bottom:15px;
+            color:#1f3c88;
+            border-bottom:2px solid #1f3c88;
+            padding-bottom:6px;
+        }
 
+        ul{
+            margin-left:20px;
+        }
+
+        ul li{
+            margin-bottom:10px;
+        }
+
+        .section p{
+            margin-bottom:12px;
+        }
+
+        .job{
+            margin-bottom:25px;
+        }
+
+        .job h3{
+            color:#222;
+            margin-bottom:5px;
+        }
+
+        .job span{
+            color:#666;
+            font-size:14px;
+        }
+
+        .skills{
+            display:flex;
+            flex-wrap:wrap;
+            gap:12px;
+        }
+
+        .skills span{
+            background:#1f3c88;
+            color:white;
+            padding:8px 14px;
+            border-radius:20px;
+            font-size:14px;
+        }
+
+        .resume-btn{
+            display:inline-block;
+            margin-top:15px;
+            background:#1f3c88;
+            color:white;
+            padding:12px 20px;
+            border-radius:6px;
+            text-decoration:none;
+            transition:0.3s;
+        }
+
+        .resume-btn:hover{
+            background:#16316d;
+        }
+
+    </style>
 </head>
 
 <body>
 
     <div class="container">
 
+        <!-- Header Section -->
+
         <div class="header">
 
-            <img src="https://via.placeholder.com/150">
+            <img src="https://via.placeholder.com/150" alt="Minni Gupta">
 
             <h1>Minni Gupta</h1>
 
+            <p>M.Sc Economics | Research Professional</p>
+
+            <div class="contact">
+                Email:
+                <a href="mailto:guptaminni25@gmail.com">
+                    guptaminni25@gmail.com
+                </a>
+                |
+                Phone: +91 9871992811
+            </div>
+
+        </div>
+
+        <!-- About Section -->
+
+        <div class="section">
+
+            <h2>About Me</h2>
+
             <p>
-                M.Sc Economics Student
+                I am an Economics postgraduate from TERI School of Advanced Studies
+                with strong research experience in climate change economics,
+                agricultural sustainability, labour economics, and development economics.
+                I have worked on empirical research projects, policy analysis,
+                and large-scale data management using tools such as STATA,
+                Tableau, Power BI, SQL, and Python.
             </p>
 
         </div>
 
-        <h2>About Me</h2>
+        <!-- Education -->
 
-        <p>
-            I am pursuing M.Sc Economics from TERI School of Advanced Studies.
-            My interests include climate change economics,
-            agriculture and development economics.
-        </p>
+        <div class="section">
 
-        <h2>Education</h2>
+            <h2>Education</h2>
 
-        <ul>
+            <ul>
 
-            <li>M.Sc Economics - TERI School of Advanced Studies</li>
+                <li>
+                    <strong>M.Sc Economics</strong> – TERI School of Advanced Studies, New Delhi (2023–2025)
+                </li>
 
-            <li>Bachelor Degree - Add Your College</li>
+                <li>
+                    <strong>B.Ed. in Economics</strong> – Maharshi Dayanand University (2021–2023)
+                </li>
 
-        </ul>
+                <li>
+                    <strong>B.Com</strong> – University of Delhi (2018–2021)
+                </li>
 
-        <h2>Research Interests</h2>
+            </ul>
 
-        <ul>
+        </div>
 
-            <li>Climate Change Economics</li>
+        <!-- Research Interests -->
 
-            <li>Agricultural Economics</li>
+        <div class="section">
 
-            <li>Labour Economics</li>
+            <h2>Research Interests</h2>
 
-            <li>Development Economics</li>
+            <ul>
 
-        </ul>
+                <li>Development Economics</li>
 
-        <h2>Skills</h2>
+                <li>Food and Nutrition Economics</li>
 
-        <ul>
+                <li>Environmental and Natural Resource Economics</li>
 
-            <li>Stata</li>
+                <li>Climate Change Economics</li>
 
-            <li>R</li>
+                <li>Econometrics</li>
 
-            <li>Tableau</li>
+                <li>Public Economics</li>
 
-            <li>Data Analysis</li>
+            </ul>
 
-        </ul>
+        </div>
 
-        <h2>Resume</h2>
+        <!-- Work Experience -->
 
-        <a href="Minni_CV.pdf" target="_blank">
+        <div class="section">
 
-            Download Resume
+            <h2>Research & Work Experience</h2>
 
-        </a>
+            <div class="job">
 
-        <h2>Contact</h2>
+                <h3>Young Professional – ICAR-NIAP</h3>
 
-        <p>
-            Email: yourmail@gmail.com
-        </p>
+                <span>July 2025 – Present</span>
+
+                <ul>
+
+                    <li>
+                        Assisting in research projects on India’s food systems,
+                        agricultural sustainability, and resource use.
+                    </li>
+
+                    <li>
+                        Conducting empirical analysis and literature reviews.
+                    </li>
+
+                    <li>
+                        Managing large-scale agricultural and macroeconomic datasets.
+                    </li>
+
+                    <li>
+                        Supporting policy-oriented research and report preparation.
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="job">
+
+                <h3>Research Intern – TERI SAS & CIP</h3>
+
+                <span>July 2024 – December 2024</span>
+
+                <ul>
+
+                    <li>
+                        Conducted pilot surveys of potato farmers in Agra.
+                    </li>
+
+                    <li>
+                        Analysed climate and heat exposure impacts on farming.
+                    </li>
+
+                    <li>
+                        Performed descriptive analysis using STATA and Power BI.
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="job">
+
+                <h3>Research Assistant – Delhi School of Economics</h3>
+
+                <span>April 2023 – September 2023</span>
+
+                <ul>
+
+                    <li>
+                        Created spatial crop maps using Tableau.
+                    </li>
+
+                    <li>
+                        Analysed climate variation and crop yields across India.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- Projects -->
+
+        <div class="section">
+
+            <h2>Academic Projects</h2>
+
+            <ul>
+
+                <li>
+                    Master’s Thesis:
+                    <em>
+                        “Climate change and gender disparities in labor wages:
+                        Evidence from Indian agricultural markets.”
+                    </em>
+                </li>
+
+                <li>
+                    Research Paper:
+                    <em>
+                        “Determinants of Willingness to Pay for Housing Among Indian Households.”
+                    </em>
+                </li>
+
+                <li>
+                    Policy Brief on urban-rural factors affecting PTA participation using IHDS-2 data.
+                </li>
+
+            </ul>
+
+        </div>
+
+        <!-- Skills -->
+
+        <div class="section">
+
+            <h2>Skills</h2>
+
+            <div class="skills">
+
+                <span>STATA</span>
+                <span>Python</span>
+                <span>SQL</span>
+                <span>Tableau</span>
+                <span>Power BI</span>
+                <span>Advanced Excel</span>
+                <span>VBA</span>
+                <span>Overleaf</span>
+
+            </div>
+
+        </div>
+
+        <!-- Training -->
+
+        <div class="section">
+
+            <h2>Training</h2>
+
+            <p>
+                <strong>Advanced Level Training on PLFS Data Extraction</strong>
+                – V.V Giri National Labour Institute (May 2025)
+            </p>
+
+        </div>
+
+        <!-- Achievements -->
+
+        <div class="section">
+
+            <h2>Achievements & Activities</h2>
+
+            <ul>
+
+                <li>Participated in Math Quiz Competitions up to zonal level.</li>
+
+                <li>Represented school in science exhibitions at central level.</li>
+
+            </ul>
+
+        </div>
+
+        <!-- Resume -->
+
+        <div class="section">
+
+            <h2>Resume</h2>
+
+            <a href="Minni_CV.pdf" target="_blank" class="resume-btn">
+                Download Resume
+            </a>
+
+        </div>
 
     </div>
 
