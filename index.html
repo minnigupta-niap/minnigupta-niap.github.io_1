@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Minni Gupta | Portfolio</title>
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
 
@@ -12,368 +16,545 @@
             margin:0;
             padding:0;
             box-sizing:border-box;
+            scroll-behavior:smooth;
         }
 
         body{
             font-family:Arial, sans-serif;
-            background:#f4f4f4;
-            color:#333;
-            line-height:1.6;
-        }
-
-        .header{
-            background:#1f3c88;
+            background:#06142b;
             color:white;
-            text-align:center;
-            padding:50px 20px;
+            overflow-x:hidden;
         }
 
-        .header h1{
-            font-size:48px;
+        /* BACKGROUND EFFECT */
+
+        body::before{
+            content:"";
+            position:fixed;
+            width:100%;
+            height:100%;
+            background:
+            radial-gradient(circle at 20% 20%, rgba(0,140,255,0.15), transparent 30%),
+            radial-gradient(circle at 80% 30%, rgba(0,255,200,0.12), transparent 30%),
+            radial-gradient(circle at 50% 80%, rgba(140,0,255,0.12), transparent 30%);
+            z-index:-1;
+        }
+
+        /* NAVBAR */
+
+        nav{
+            width:100%;
+            padding:18px 8%;
+            background:rgba(0,0,0,0.25);
+            backdrop-filter:blur(10px);
+            position:fixed;
+            top:0;
+            z-index:1000;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            border-bottom:1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo{
+            font-size:24px;
+            font-weight:bold;
+            color:white;
+        }
+
+        nav ul{
+            display:flex;
+            list-style:none;
+            gap:30px;
+        }
+
+        nav ul li a{
+            color:white;
+            text-decoration:none;
+            font-size:16px;
+            transition:0.3s;
+        }
+
+        nav ul li a:hover{
+            color:#00d4ff;
+        }
+
+        /* HERO */
+
+        .hero{
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            padding:120px 20px 60px;
+        }
+
+        .hero-content h1{
+            font-size:70px;
             margin-bottom:10px;
         }
 
-        .header p{
-            font-size:20px;
+        .hero-content h2{
+            color:#b8c7e0;
+            font-weight:normal;
+            margin-bottom:15px;
         }
+
+        .hero-content p{
+            color:#aab6d4;
+            margin-bottom:35px;
+            font-size:18px;
+        }
+
+        .btn{
+            display:inline-block;
+            padding:14px 28px;
+            border-radius:8px;
+            background:linear-gradient(90deg,#4b5cff,#00d4aa);
+            color:white;
+            text-decoration:none;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            transform:translateY(-3px);
+        }
+
+        /* MAIN LAYOUT */
 
         .container{
-            width:85%;
-            max-width:1100px;
-            margin:30px auto;
+            width:88%;
+            margin:auto;
+            display:grid;
+            grid-template-columns:2fr 1fr;
+            gap:30px;
+            margin-bottom:50px;
         }
 
-        .section{
-            background:white;
-            padding:25px;
-            margin-bottom:25px;
-            border-radius:10px;
-            box-shadow:0 0 10px rgba(0,0,0,0.1);
+        .card{
+            background:rgba(255,255,255,0.05);
+            border:1px solid rgba(255,255,255,0.08);
+            border-radius:18px;
+            padding:30px;
+            backdrop-filter:blur(10px);
+            box-shadow:0 0 20px rgba(0,0,0,0.25);
         }
 
-        h2{
-            color:#1f3c88;
-            margin-bottom:15px;
-            border-bottom:2px solid #1f3c88;
-            padding-bottom:8px;
+        h3{
+            font-size:30px;
+            margin-bottom:20px;
         }
 
-        ul{
-            padding-left:20px;
+        .section-title{
+            color:#00d4ff;
+            margin-bottom:20px;
+            font-size:22px;
         }
 
-        ul li{
-            margin-bottom:10px;
+        /* TIMELINE */
+
+        .timeline{
+            border-left:3px solid #4b5cff;
+            padding-left:25px;
+            margin-left:10px;
         }
 
-        .job{
-            margin-bottom:25px;
+        .timeline-item{
+            margin-bottom:35px;
+            position:relative;
         }
 
-        .job h3{
-            color:#222;
+        .timeline-item::before{
+            content:"";
+            position:absolute;
+            left:-36px;
+            top:5px;
+            width:14px;
+            height:14px;
+            border-radius:50%;
+            background:#00d4ff;
+            box-shadow:0 0 12px #00d4ff;
+        }
+
+        .timeline-item h4{
+            font-size:20px;
             margin-bottom:5px;
         }
 
-        .job span{
-            color:gray;
+        .timeline-item span{
+            color:#9fb0d1;
             font-size:14px;
         }
+
+        .timeline-item p{
+            margin-top:10px;
+            color:#d6dff5;
+            line-height:1.7;
+        }
+
+        /* PROFILE */
+
+        .profile p{
+            line-height:1.8;
+            color:#dce4ff;
+        }
+
+        .info{
+            margin-top:20px;
+        }
+
+        .info p{
+            margin-bottom:10px;
+        }
+
+        /* SKILLS */
 
         .skills{
             display:flex;
             flex-wrap:wrap;
-            gap:10px;
+            gap:12px;
+            margin-top:15px;
         }
 
         .skills span{
-            background:#1f3c88;
-            color:white;
-            padding:10px 15px;
-            border-radius:20px;
-            font-size:14px;
+            background:#12264f;
+            padding:10px 16px;
+            border-radius:30px;
+            border:1px solid rgba(255,255,255,0.1);
         }
 
-        .resume-btn{
-            display:inline-block;
-            background:#1f3c88;
-            color:white;
-            padding:12px 20px;
-            text-decoration:none;
-            border-radius:5px;
-            margin-top:10px;
+        /* PROJECTS */
+
+        .project{
+            margin-bottom:25px;
         }
 
-        .resume-btn:hover{
-            background:#162d66;
-        }
-
-        .contact p{
+        .project h4{
             margin-bottom:8px;
+            color:#00d4ff;
         }
 
-        a{
-            color:#1f3c88;
-            text-decoration:none;
+        .project p{
+            color:#d6dff5;
+            line-height:1.7;
+        }
+
+        /* FOOTER */
+
+        footer{
+            text-align:center;
+            padding:25px;
+            color:#aab6d4;
+            border-top:1px solid rgba(255,255,255,0.08);
+        }
+
+        /* MOBILE */
+
+        @media(max-width:900px){
+
+            .container{
+                grid-template-columns:1fr;
+            }
+
+            .hero-content h1{
+                font-size:48px;
+            }
+
+            nav ul{
+                gap:15px;
+            }
+
         }
 
     </style>
+
 </head>
 
 <body>
 
-    <!-- Header -->
+    <!-- NAVBAR -->
 
-    <div class="header">
+    <nav>
 
-        <h1>Minni Gupta</h1>
+        <div class="logo">
+            Minni Gupta
+        </div>
 
-        <p>
-            Economist | Research Professional at ICAR-NIAP
-        </p>
+        <ul>
 
-    </div>
+            <li><a href="#timeline">CV</a></li>
 
-    <div class="container">
+            <li><a href="#profile">Profile</a></li>
 
-        <!-- About Me -->
+            <li><a href="#projects">Projects</a></li>
 
-        <div class="section">
+            <li><a href="#skills">Skills</a></li>
 
-            <h2>About Me</h2>
+        </ul>
+
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Minni Gupta</h1>
+
+            <h2>
+                Economist — ICAR-NIAP
+            </h2>
 
             <p>
-                I have completed my M.Sc in Economics from TERI School of Advanced Studies
-                and currently work as a Young Professional at ICAR-NIAP.
-                My research interests include climate change economics,
-                agricultural economics, development economics,
-                food and nutrition economics, and econometrics.
-                I have experience in research, policy analysis,
-                survey work, data management, and statistical analysis.
+                Research Professional | Agricultural & Development Economics
             </p>
 
-        </div>
-
-        <!-- Education -->
-
-        <div class="section">
-
-            <h2>Education</h2>
-
-            <ul>
-
-                <li>
-                    <strong>M.Sc Economics</strong> –
-                    TERI School of Advanced Studies, New Delhi
-                </li>
-
-                <li>
-                    <strong>B.Ed. in Economics</strong> –
-                    Maharshi Dayanand University
-                </li>
-
-                <li>
-                    <strong>B.Com</strong> –
-                    University of Delhi
-                </li>
-
-            </ul>
-
-        </div>
-
-        <!-- Research Interests -->
-
-        <div class="section">
-
-            <h2>Research Interests</h2>
-
-            <ul>
-
-                <li>Climate Change Economics</li>
-
-                <li>Agricultural Economics</li>
-
-                <li>Development Economics</li>
-
-                <li>Food and Nutrition Economics</li>
-
-                <li>Environmental Economics</li>
-
-                <li>Econometrics</li>
-
-            </ul>
-
-        </div>
-
-        <!-- Work Experience -->
-
-        <div class="section">
-
-            <h2>Work Experience</h2>
-
-            <div class="job">
-
-                <h3>Young Professional – ICAR-NIAP</h3>
-
-                <span>July 2025 – Present</span>
-
-                <ul>
-
-                    <li>
-                        Working on research projects related to India’s food systems,
-                        agricultural sustainability, and natural resource use.
-                    </li>
-
-                    <li>
-                        Conducting literature reviews and empirical analysis.
-                    </li>
-
-                    <li>
-                        Managing state and district level panel datasets.
-                    </li>
-
-                    <li>
-                        Supporting policy-oriented research and report writing.
-                    </li>
-
-                </ul>
-
-            </div>
-
-            <div class="job">
-
-                <h3>Research Intern – TERI SAS & CIP</h3>
-
-                <span>July 2024 – December 2024</span>
-
-                <ul>
-
-                    <li>
-                        Conducted pilot surveys of potato farmers in Agra.
-                    </li>
-
-                    <li>
-                        Studied impacts of heat exposure on farming and health.
-                    </li>
-
-                    <li>
-                        Performed descriptive analysis using STATA and Power BI.
-                    </li>
-
-                </ul>
-
-            </div>
-
-            <div class="job">
-
-                <h3>Research Assistant – Delhi School of Economics</h3>
-
-                <span>April 2023 – September 2023</span>
-
-                <ul>
-
-                    <li>
-                        Created spatial crop maps using Tableau.
-                    </li>
-
-                    <li>
-                        Analysed climate variation and crop yield data.
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </div>
-
-        <!-- Projects -->
-
-        <div class="section">
-
-            <h2>Academic Projects</h2>
-
-            <ul>
-
-                <li>
-                    Master’s Thesis:
-                    “Climate Change and Gender Disparities in Labor Wages:
-                    Evidence from Indian Agricultural Markets.”
-                </li>
-
-                <li>
-                    Research Paper:
-                    “Determinants of Willingness to Pay for Housing Among Indian Households.”
-                </li>
-
-                <li>
-                    Policy Brief on urban-rural factors affecting PTA participation using IHDS-2 data.
-                </li>
-
-            </ul>
-
-        </div>
-
-        <!-- Skills -->
-
-        <div class="section">
-
-            <h2>Skills</h2>
-
-            <div class="skills">
-
-                <span>STATA</span>
-
-                <span>Python</span>
-
-                <span>SQL</span>
-
-                <span>Tableau</span>
-
-                <span>Power BI</span>
-
-                <span>Advanced Excel</span>
-
-                <span>VBA</span>
-
-                <span>Overleaf</span>
-
-            </div>
-
-        </div>
-
-        <!-- Resume -->
-
-        <div class="section">
-
-            <h2>Resume</h2>
-
-            <a href="Minni_CV.pdf" target="_blank" class="resume-btn">
-                Download Resume
+            <a href="Minni_CV.pdf" class="btn" target="_blank">
+                <i class="fa-solid fa-download"></i>
+                Download CV
             </a>
 
         </div>
 
-        <!-- Contact -->
+    </section>
 
-        <div class="section contact">
+    <!-- MAIN CONTENT -->
 
-            <h2>Contact</h2>
+    <div class="container">
 
-            <p>
-                <strong>Email:</strong>
-                <a href="mailto:guptaminni25@gmail.com">
-                    guptaminni25@gmail.com
-                </a>
-            </p>
+        <!-- LEFT COLUMN -->
 
-            <p>
-                <strong>Phone:</strong>
-                +91 9871992811
-            </p>
+        <div>
+
+            <!-- TIMELINE -->
+
+            <div class="card" id="timeline">
+
+                <h3>Academic Timeline</h3>
+
+                <div class="timeline">
+
+                    <div class="timeline-item">
+
+                        <h4>M.Sc Economics</h4>
+
+                        <span>
+                            TERI School of Advanced Studies | 2023–2025
+                        </span>
+
+                        <p>
+                            Specialized in climate change economics,
+                            econometrics, agricultural economics,
+                            and development economics.
+                        </p>
+
+                    </div>
+
+                    <div class="timeline-item">
+
+                        <h4>B.Ed. in Economics</h4>
+
+                        <span>
+                            Maharshi Dayanand University | 2021–2023
+                        </span>
+
+                    </div>
+
+                    <div class="timeline-item">
+
+                        <h4>B.Com</h4>
+
+                        <span>
+                            University of Delhi | 2018–2021
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- EXPERIENCE -->
+
+            <div class="card">
+
+                <h3>Professional Experience</h3>
+
+                <div class="timeline">
+
+                    <div class="timeline-item">
+
+                        <h4>Young Professional — ICAR-NIAP</h4>
+
+                        <span>
+                            July 2025 — Present
+                        </span>
+
+                        <p>
+                            Working on food systems,
+                            agricultural sustainability,
+                            policy-oriented research,
+                            and panel data analysis.
+                        </p>
+
+                    </div>
+
+                    <div class="timeline-item">
+
+                        <h4>Research Intern — TERI SAS & CIP</h4>
+
+                        <span>
+                            2024
+                        </span>
+
+                        <p>
+                            Conducted pilot surveys,
+                            STATA analysis,
+                            and Power BI visualization.
+                        </p>
+
+                    </div>
+
+                    <div class="timeline-item">
+
+                        <h4>Research Assistant — Delhi School of Economics</h4>
+
+                        <span>
+                            2023
+                        </span>
+
+                        <p>
+                            Created Tableau-based spatial maps
+                            and climate-crop yield analysis.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECTS -->
+
+            <div class="card" id="projects">
+
+                <h3>Research Projects</h3>
+
+                <div class="project">
+
+                    <h4>Master’s Thesis</h4>
+
+                    <p>
+                        Climate change and gender disparities
+                        in labor wages in Indian agricultural markets.
+                    </p>
+
+                </div>
+
+                <div class="project">
+
+                    <h4>Housing Willingness Study</h4>
+
+                    <p>
+                        Hedonic Price Model analysis for Indian households.
+                    </p>
+
+                </div>
+
+                <div class="project">
+
+                    <h4>Policy Brief</h4>
+
+                    <p>
+                        Urban-rural determinants of PTA participation
+                        using IHDS-2 data.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN -->
+
+        <div>
+
+            <!-- PROFILE -->
+
+            <div class="card profile" id="profile">
+
+                <h3>Profile</h3>
+
+                <p>
+                    Applied economist specializing in agricultural economics,
+                    climate change economics,
+                    development economics,
+                    and econometrics.
+                    Experienced in empirical analysis,
+                    survey-based research,
+                    panel datasets,
+                    and policy research.
+                </p>
+
+                <div class="info">
+
+                    <p>
+                        <strong>Email:</strong>
+                        guptaminni25@gmail.com
+                    </p>
+
+                    <p>
+                        <strong>Organization:</strong>
+                        ICAR-NIAP
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- SKILLS -->
+
+            <div class="card" id="skills">
+
+                <h3>Skills</h3>
+
+                <div class="skills">
+
+                    <span>STATA</span>
+
+                    <span>Python</span>
+
+                    <span>SQL</span>
+
+                    <span>Power BI</span>
+
+                    <span>Tableau</span>
+
+                    <span>Econometrics</span>
+
+                    <span>Research Analysis</span>
+
+                    <span>Advanced Excel</span>
+
+                </div>
+
+            </div>
 
         </div>
 
     </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 Minni Gupta | Academic Portfolio
+
+    </footer>
 
 </body>
 
